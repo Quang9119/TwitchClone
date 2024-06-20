@@ -8,6 +8,9 @@ import {
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Logo } from "./(auth)/_components/logo";
+import { dark } from "@clerk/themes";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{ baseTheme: dark }}>
       <html lang="en">
         <head>
           <meta charSet="UTF-8" />
@@ -49,7 +52,15 @@ export default function RootLayout({
               </div>
             </nav>
           </header>
-          <main>{children}</main>
+          <main>
+            <ThemeProvider
+              attribute="class"
+              forcedTheme="dark"
+              storageKey="streamhive-theme"
+            >
+              {children}
+            </ThemeProvider>
+          </main>
         </body>
       </html>
     </ClerkProvider>
