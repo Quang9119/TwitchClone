@@ -1,16 +1,11 @@
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+// layout.tsx
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import { Logo } from "./(auth)/_components/logo";
+import "@/app/globals.css";
 import { dark } from "@clerk/themes";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Navbar } from "./_components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,21 +31,7 @@ export default function RootLayout({
         </head>
         <body className={inter.className}>
           <header>
-            <nav className="flex justify-between p-4 bg-gray-800 text-white">
-              <h1 className="text-2xl font-bold">StreamHive</h1>
-              <div>
-                <SignedOut>
-                  <SignInButton mode="modal">
-                    <button className="border bg-green-600 text-white font-sans rounded-sm px-4 py-2">
-                      Sign In
-                    </button>
-                  </SignInButton>
-                </SignedOut>
-                <SignedIn>
-                  <UserButton />
-                </SignedIn>
-              </div>
-            </nav>
+            <Navbar /> {/* Use Navbar component here */}
           </header>
           <main>
             <ThemeProvider

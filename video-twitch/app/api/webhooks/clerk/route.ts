@@ -45,6 +45,8 @@ export async function POST(req: Request) {
   // For this guide, you simply log the payload to the console
   const eventType = evt.type;
   console.log("Received event:", eventType);
+
+  //async created
   if (eventType === "user.created") {
     await db.user.create({
       data: {
@@ -54,6 +56,7 @@ export async function POST(req: Request) {
       },
     });
   }
+  //async updated
   if (eventType === "user.updated") {
     const currentUser = await db.user.findUnique({
       where: {
@@ -76,7 +79,7 @@ export async function POST(req: Request) {
       });
     }
   }
-
+  //async updated
   if (eventType === "user.deleted") {
     const currentUser = await db.user.findUnique({
       where: {
