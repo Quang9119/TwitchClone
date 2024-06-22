@@ -5,7 +5,8 @@ import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import { dark } from "@clerk/themes";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "./_components/navbar";
+import { Navbar } from "./(browse)/(home)/_components/navbar";
+import Sidebar from "./(browse)/(home)/_components/sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,10 +30,9 @@ export default function RootLayout({
             content="width=device-width, initial-scale=1.0"
           />
         </head>
+        {/* <Navbar />  */}
+
         <body className={inter.className}>
-          <header>
-            <Navbar /> {/* Use Navbar component here */}
-          </header>
           <main>
             <ThemeProvider
               attribute="class"
