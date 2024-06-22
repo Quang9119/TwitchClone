@@ -1,7 +1,7 @@
-// components/Sidebar.tsx
+// components/Navbar.tsx
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
-export const Sidebar = () => {
+export const Navbar = () => {
   return (
     <div>
       <SignedOut>
