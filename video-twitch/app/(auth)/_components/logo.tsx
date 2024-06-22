@@ -12,7 +12,7 @@ export const Logo = () => {
   return (
     <Link href="/">
       <div className="flex items-center">
-        <Image src="/streamhiveimg.jpg" alt="" width={40} height={40} />
+        <Image src="/logo.svg" alt="StreamHive Logo" width={40} height={40} />
         <h1
           className={cn(
             font.className,
