@@ -11,7 +11,7 @@ interface WrapperProps {
 export const Wrapper = ({ children }: WrapperProps) => {
   const { collapsed } = useSidebar((state) => state);
   const isClient = useIsClient();
-
+  
   if (!isClient)
     return (
       <aside

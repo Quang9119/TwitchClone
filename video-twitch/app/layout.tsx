@@ -6,7 +6,8 @@ import "@/app/globals.css";
 import { dark } from "@clerk/themes";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "./(browse)/(home)/_components/navbar";
-import {Sidebar} from "./(browse)/(home)/_components/sidebar";
+import { Sidebar } from "./(browse)/(home)/_components/sidebar";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
               forcedTheme="dark"
               storageKey="streamhive-theme"
             >
+              <Toaster theme="light" position="top-right" />
               {children}
             </ThemeProvider>
           </main>
